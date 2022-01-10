@@ -1,0 +1,89 @@
+local LegendsOPReach = Instance.new("ScreenGui")
+local backgroundholderidk = Instance.new("Frame")
+local title = Instance.new("TextLabel")
+local size = Instance.new("TextBox")
+local UICorner = Instance.new("UICorner")
+local submit = Instance.new("TextButton")
+local UICorner_2 = Instance.new("UICorner")
+local bypassac = Instance.new("TextButton")
+local UICorner_3 = Instance.new("UICorner")
+local UICorner_4 = Instance.new("UICorner")
+
+--Properties:
+
+LegendsOPReach.Name = "Legend's OP Reach"
+LegendsOPReach.Parent = game.CoreGui
+
+backgroundholderidk.Name = "backgroundholderidk"
+backgroundholderidk.Parent = LegendsOPReach
+backgroundholderidk.BackgroundColor3 = Color3.fromRGB(81, 82, 82)
+backgroundholderidk.BackgroundTransparency = 0.300
+backgroundholderidk.Position = UDim2.new(0.0576036833, 0, 0.322660089, 0)
+backgroundholderidk.Size = UDim2.new(0, 235, 0, 288)
+backgroundholderidk.Active = true
+backgroundholderidk.Visible = true
+
+title.Name = "title"
+title.Parent = backgroundholderidk
+title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+title.BackgroundTransparency = 1.000
+title.BorderSizePixel = 0
+title.Size = UDim2.new(0, 235, 0, 38)
+title.Font = Enum.Font.Antique
+title.Text = "Legend's OP Reach"
+title.TextColor3 = Color3.fromRGB(255, 255, 255)
+title.TextSize = 35.000
+
+size.Name = "size"
+size.Parent = backgroundholderidk
+size.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+size.BackgroundTransparency = 0.500
+size.ClipsDescendants = true
+size.Position = UDim2.new(0.200000003, 0, 0.302083343, 0)
+size.Size = UDim2.new(0, 153, 0, 48)
+size.Font = Enum.Font.LuckiestGuy
+size.Text = "AMOUNT"
+size.TextColor3 = Color3.fromRGB(255, 255, 255)
+size.TextSize = 14.000
+size.TextWrapped = true
+
+UICorner.CornerRadius = UDim.new(0.100000001, 0)
+UICorner.Parent = size
+
+submit.Name = "submit"
+submit.Parent = backgroundholderidk
+submit.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+submit.BackgroundTransparency = 0.500
+submit.Position = UDim2.new(0.200000003, 0, 0.607638896, 0)
+submit.Size = UDim2.new(0, 153, 0, 47)
+submit.Font = Enum.Font.LuckiestGuy
+submit.Text = "SUBMIT!"
+submit.TextColor3 = Color3.fromRGB(255, 255, 255)
+submit.TextSize = 14.000
+
+submit.MouseButton1Click:connect(function()
+    _G.Dist = tonumber(size.Text)
+end)
+
+UICorner_2.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_2.Parent = submit
+
+bypassac.Name = "bypassac"
+bypassac.Parent = backgroundholderidk
+bypassac.BackgroundColor3 = Color3.fromRGB(22, 22, 22)
+bypassac.BackgroundTransparency = 0.500
+bypassac.Position = UDim2.new(0.370212764, 0, 0.163194478, 0)
+bypassac.Size = UDim2.new(0, 72, 0, 27)
+bypassac.Font = Enum.Font.LuckiestGuy
+bypassac.Text = "Bypass"
+bypassac.TextColor3 = Color3.fromRGB(255, 255, 255)
+bypassac.TextSize = 13.000
+bypassac.MouseButton1Down:connect(function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/BYPASS-AC/main/ANTICHEAT"))()
+end)
+
+UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
+UICorner_3.Parent = bypassac
+
+UICorner_4.CornerRadius = UDim.new(0.125, 0)
+UICorner_4.Parent = backgroundholderidk
