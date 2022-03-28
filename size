@@ -79,7 +79,7 @@ bypassac.Text = "Bypass"
 bypassac.TextColor3 = Color3.fromRGB(255, 255, 255)
 bypassac.TextSize = 13.000
 bypassac.MouseButton1Down:connect(function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/OptioniaI/BYPASS-AC/main/ANTICHEAT"))()
+loadstring(game:HttpGet("https://gist.githubusercontent.com/OptioniaI/04ea0dd36d8bee808ad832fbd8371f02/raw/59a21f03c24bf7cc5b87012b52b102566a475519/byp-ac"))()
 end)
 
 UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
