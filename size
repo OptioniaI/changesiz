@@ -9,6 +9,7 @@ local UICorner_2 = Instance.new("UICorner")
 local bypassac = Instance.new("TextButton")
 local hide = Instance.new("TextButton")
 local show = Instance.new("TextButton")
+local rgb = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local UICorner_4 = Instance.new("UICorner")
 
@@ -121,6 +122,17 @@ show.Text = "Show"
 show.TextColor3 = Color3.fromRGB(255, 255, 255)
 show.TextSize = 14.000
 
+rgb.Name = "rgb"
+rgb.Parent = backgroundholderidk
+rgb.BackgroundColor3 = Color3.fromRGB(81, 82, 82)
+rgb.BorderColor3 = Color3.fromRGB(255, 255, 255)
+rgb.Position = UDim2.new(0.382978737, 0, 0.489583343, 0)
+rgb.Size = UDim2.new(0, 54, 0, 22)
+rgb.Font = Enum.Font.LuckiestGuy
+rgb.Text = "RGB"
+rgb.TextColor3 = Color3.fromRGB(255, 255, 255)
+rgb.TextSize = 14.000
+
 UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
 UICorner_3.Parent = bypassac
 
@@ -144,4 +156,13 @@ game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
 	if inp.KeyCode == Enum.KeyCode.Comma then
 		LegendsOPReach.Enabled = not LegendsOPReach.Enabled
 	end
+end)
+
+rgb.MouseButton1Click:Connect(function()
+    local SP = game:GetService("CoreGui").RobloxGui.Modules.Sphere
+    _G.RB = true
+    while _G.RB == true do
+        task.wait()
+        SP.Color3 = Color3.fromHSV(tick()%5/5,1,1)
+    end
 end)
