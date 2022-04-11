@@ -1,15 +1,16 @@
 local LegendsOPReach = Instance.new("ScreenGui")
 local backgroundholderidk = Instance.new("Frame")
 local title = Instance.new("TextLabel")
+local title2 = Instance.new("TextLabel")
 local size = Instance.new("TextBox")
 local UICorner = Instance.new("UICorner")
 local submit = Instance.new("TextButton")
 local UICorner_2 = Instance.new("UICorner")
 local bypassac = Instance.new("TextButton")
+local hide = Instance.new("TextButton")
+local show = Instance.new("TextButton")
 local UICorner_3 = Instance.new("UICorner")
 local UICorner_4 = Instance.new("UICorner")
-
---Properties:
 
 LegendsOPReach.Name = "Legend's OP Reach"
 LegendsOPReach.Parent = game.CoreGui
@@ -82,8 +83,65 @@ bypassac.MouseButton1Down:connect(function()
 loadstring(game:HttpGet("https://gist.githubusercontent.com/OptioniaI/04ea0dd36d8bee808ad832fbd8371f02/raw/59a21f03c24bf7cc5b87012b52b102566a475519/byp-ac"))()
 end)
 
+title2.Name = "title2"
+title2.Parent = backgroundholderidk
+title2.BackgroundColor3 = Color3.fromRGB(81, 82, 82)
+title2.BackgroundTransparency = 0.300
+title2.BorderColor3 = Color3.fromRGB(27, 42, 53)
+title2.BorderSizePixel = 0
+title2.Position = UDim2.new(0.174468085, 0, 0.819444418, 0)
+title2.Size = UDim2.new(0, 73, 0, 37)
+title2.Font = Enum.Font.LuckiestGuy
+title2.Text = "Visualizer"
+title2.TextColor3 = Color3.fromRGB(255, 255, 255)
+title2.TextSize = 11.000
+
+hide.Name = "hide"
+hide.Parent = backgroundholderidk
+hide.BackgroundColor3 = Color3.fromRGB(81, 82, 82)
+hide.BackgroundTransparency = 0.300
+hide.BorderColor3 = Color3.fromRGB(255, 255, 255)
+hide.Position = UDim2.new(0.540425539, 0, 0.833333313, 0)
+hide.Size = UDim2.new(0, 67, 0, 29)
+hide.Font = Enum.Font.LuckiestGuy
+hide.Text = "Hide"
+hide.TextColor3 = Color3.fromRGB(255, 255, 255)
+hide.TextSize = 14.000
+
+show.Name = "show"
+show.Parent = backgroundholderidk
+show.BackgroundColor3 = Color3.fromRGB(81, 82, 82)
+show.BackgroundTransparency = 0.300
+show.BorderColor3 = Color3.fromRGB(255, 255, 255)
+show.Position = UDim2.new(0.540425539, 0, 0.833333313, 0)
+show.Size = UDim2.new(0, 67, 0, 29)
+show.Visible = false
+show.Font = Enum.Font.LuckiestGuy
+show.Text = "Show"
+show.TextColor3 = Color3.fromRGB(255, 255, 255)
+show.TextSize = 14.000
+
 UICorner_3.CornerRadius = UDim.new(0.100000001, 0)
 UICorner_3.Parent = bypassac
 
 UICorner_4.CornerRadius = UDim.new(0.125, 0)
 UICorner_4.Parent = backgroundholderidk
+
+show.MouseButton1Click:Connect(function()
+    hide.Visible = true
+    show.Visible = false
+    game:GetService("CoreGui").RobloxGui.Modules.Sphere.Visible = true
+end)
+
+hide.MouseButton1Click:Connect(function()
+    hide.Visible = false
+    show.Visible = true
+    game:GetService("CoreGui").RobloxGui.Modules.Sphere.Visible = false
+end)
+
+game:GetService("UserInputService").InputBegan:connect(function(inp,gpe)
+	if gpe then return end
+	if inp.KeyCode == Enum.KeyCode.Comma then
+		LegendsOPReach.Enabled = not LegendsOPReach.Enabled
+	end
+end)
